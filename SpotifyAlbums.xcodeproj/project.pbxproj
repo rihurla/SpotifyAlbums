@@ -13,6 +13,19 @@
 		0187177324B0C1B6009A5490 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0187177124B0C1B6009A5490 /* LaunchScreen.storyboard */; };
 		0187177E24B0C1B6009A5490 /* SpotifyAlbumsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0187177D24B0C1B6009A5490 /* SpotifyAlbumsTests.swift */; };
 		0187178E24B0C4C2009A5490 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0187178D24B0C4C2009A5490 /* Localizable.strings */; };
+		0187179624B0CC12009A5490 /* RepositoryService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0187179524B0CC12009A5490 /* RepositoryService.swift */; };
+		0187179A24B0CC3C009A5490 /* RepositoryError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0187179924B0CC3C009A5490 /* RepositoryError.swift */; };
+		0187179D24B0CCC8009A5490 /* StringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0187179C24B0CCC8009A5490 /* StringExtensions.swift */; };
+		0187179F24B0CD2D009A5490 /* SpotifyRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0187179E24B0CD2D009A5490 /* SpotifyRepository.swift */; };
+		018717A124B0CDA6009A5490 /* SpotifyAuthorizationToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = 018717A024B0CDA6009A5490 /* SpotifyAuthorizationToken.swift */; };
+		018717A324B0CEEB009A5490 /* ServiceUrls.swift in Sources */ = {isa = PBXBuildFile; fileRef = 018717A224B0CEEB009A5490 /* ServiceUrls.swift */; };
+		018717A524B0DAAE009A5490 /* URLComponentsExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 018717A424B0DAAE009A5490 /* URLComponentsExtensions.swift */; };
+		018717A824B0DBCA009A5490 /* TokenDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 018717A724B0DBCA009A5490 /* TokenDataProvider.swift */; };
+		018717AA24B0EBE3009A5490 /* DictionaryExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 018717A924B0EBE3009A5490 /* DictionaryExtensions.swift */; };
+		018717AC24B0EBF7009A5490 /* CharacterSetExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 018717AB24B0EBF7009A5490 /* CharacterSetExtensions.swift */; };
+		018717AF24B0ED1B009A5490 /* SpotifyRepositoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 018717AE24B0ED1B009A5490 /* SpotifyRepositoryTests.swift */; };
+		018717B424B0EDE8009A5490 /* RepositoryServiceMocked.swift in Sources */ = {isa = PBXBuildFile; fileRef = 018717B324B0EDE8009A5490 /* RepositoryServiceMocked.swift */; };
+		018717B624B0F1AE009A5490 /* AppCredentials.swift in Sources */ = {isa = PBXBuildFile; fileRef = 018717B524B0F1AE009A5490 /* AppCredentials.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +49,19 @@
 		0187177D24B0C1B6009A5490 /* SpotifyAlbumsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpotifyAlbumsTests.swift; sourceTree = "<group>"; };
 		0187177F24B0C1B6009A5490 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0187178D24B0C4C2009A5490 /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
+		0187179524B0CC12009A5490 /* RepositoryService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryService.swift; sourceTree = "<group>"; };
+		0187179924B0CC3C009A5490 /* RepositoryError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryError.swift; sourceTree = "<group>"; };
+		0187179C24B0CCC8009A5490 /* StringExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtensions.swift; sourceTree = "<group>"; };
+		0187179E24B0CD2D009A5490 /* SpotifyRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpotifyRepository.swift; sourceTree = "<group>"; };
+		018717A024B0CDA6009A5490 /* SpotifyAuthorizationToken.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpotifyAuthorizationToken.swift; sourceTree = "<group>"; };
+		018717A224B0CEEB009A5490 /* ServiceUrls.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceUrls.swift; sourceTree = "<group>"; };
+		018717A424B0DAAE009A5490 /* URLComponentsExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLComponentsExtensions.swift; sourceTree = "<group>"; };
+		018717A724B0DBCA009A5490 /* TokenDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenDataProvider.swift; sourceTree = "<group>"; };
+		018717A924B0EBE3009A5490 /* DictionaryExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DictionaryExtensions.swift; sourceTree = "<group>"; };
+		018717AB24B0EBF7009A5490 /* CharacterSetExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterSetExtensions.swift; sourceTree = "<group>"; };
+		018717AE24B0ED1B009A5490 /* SpotifyRepositoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpotifyRepositoryTests.swift; sourceTree = "<group>"; };
+		018717B324B0EDE8009A5490 /* RepositoryServiceMocked.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryServiceMocked.swift; sourceTree = "<group>"; };
+		018717B524B0F1AE009A5490 /* AppCredentials.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCredentials.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +103,8 @@
 		0187176524B0C1B5009A5490 /* SpotifyAlbums */ = {
 			isa = PBXGroup;
 			children = (
+				018717A624B0DBB9009A5490 /* Provider */,
+				0187179B24B0CC97009A5490 /* Exptensions */,
 				0187178C24B0C3DF009A5490 /* Factory */,
 				0187178B24B0C3BE009A5490 /* Models */,
 				0187178A24B0C3AF009A5490 /* View */,
@@ -95,6 +123,8 @@
 		0187177C24B0C1B6009A5490 /* SpotifyAlbumsTests */ = {
 			isa = PBXGroup;
 			children = (
+				018717B024B0EDC5009A5490 /* Mocks */,
+				018717AD24B0ED0D009A5490 /* Service */,
 				0187177D24B0C1B6009A5490 /* SpotifyAlbumsTests.swift */,
 				0187177F24B0C1B6009A5490 /* Info.plist */,
 			);
@@ -111,6 +141,11 @@
 		0187178924B0C380009A5490 /* Service */ = {
 			isa = PBXGroup;
 			children = (
+				018717B524B0F1AE009A5490 /* AppCredentials.swift */,
+				018717A224B0CEEB009A5490 /* ServiceUrls.swift */,
+				0187179924B0CC3C009A5490 /* RepositoryError.swift */,
+				0187179524B0CC12009A5490 /* RepositoryService.swift */,
+				0187179E24B0CD2D009A5490 /* SpotifyRepository.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -125,6 +160,7 @@
 		0187178B24B0C3BE009A5490 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				018717A024B0CDA6009A5490 /* SpotifyAuthorizationToken.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -134,6 +170,41 @@
 			children = (
 			);
 			path = Factory;
+			sourceTree = "<group>";
+		};
+		0187179B24B0CC97009A5490 /* Exptensions */ = {
+			isa = PBXGroup;
+			children = (
+				0187179C24B0CCC8009A5490 /* StringExtensions.swift */,
+				018717A424B0DAAE009A5490 /* URLComponentsExtensions.swift */,
+				018717A924B0EBE3009A5490 /* DictionaryExtensions.swift */,
+				018717AB24B0EBF7009A5490 /* CharacterSetExtensions.swift */,
+			);
+			path = Exptensions;
+			sourceTree = "<group>";
+		};
+		018717A624B0DBB9009A5490 /* Provider */ = {
+			isa = PBXGroup;
+			children = (
+				018717A724B0DBCA009A5490 /* TokenDataProvider.swift */,
+			);
+			path = Provider;
+			sourceTree = "<group>";
+		};
+		018717AD24B0ED0D009A5490 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				018717AE24B0ED1B009A5490 /* SpotifyRepositoryTests.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		018717B024B0EDC5009A5490 /* Mocks */ = {
+			isa = PBXGroup;
+			children = (
+				018717B324B0EDE8009A5490 /* RepositoryServiceMocked.swift */,
+			);
+			path = Mocks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -237,7 +308,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				018717A524B0DAAE009A5490 /* URLComponentsExtensions.swift in Sources */,
+				018717A124B0CDA6009A5490 /* SpotifyAuthorizationToken.swift in Sources */,
+				018717AA24B0EBE3009A5490 /* DictionaryExtensions.swift in Sources */,
+				0187179624B0CC12009A5490 /* RepositoryService.swift in Sources */,
 				0187176724B0C1B5009A5490 /* AppDelegate.swift in Sources */,
+				018717A324B0CEEB009A5490 /* ServiceUrls.swift in Sources */,
+				018717B624B0F1AE009A5490 /* AppCredentials.swift in Sources */,
+				0187179D24B0CCC8009A5490 /* StringExtensions.swift in Sources */,
+				0187179A24B0CC3C009A5490 /* RepositoryError.swift in Sources */,
+				018717AC24B0EBF7009A5490 /* CharacterSetExtensions.swift in Sources */,
+				0187179F24B0CD2D009A5490 /* SpotifyRepository.swift in Sources */,
+				018717A824B0DBCA009A5490 /* TokenDataProvider.swift in Sources */,
 				0187176924B0C1B5009A5490 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -246,7 +328,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				018717AF24B0ED1B009A5490 /* SpotifyRepositoryTests.swift in Sources */,
 				0187177E24B0C1B6009A5490 /* SpotifyAlbumsTests.swift in Sources */,
+				018717B424B0EDE8009A5490 /* RepositoryServiceMocked.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -392,6 +476,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = YR5U8QDANM;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Frameworks",
+				);
 				INFOPLIST_FILE = SpotifyAlbums/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -410,6 +498,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = YR5U8QDANM;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Frameworks",
+				);
 				INFOPLIST_FILE = SpotifyAlbums/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

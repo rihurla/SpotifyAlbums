@@ -5,3 +5,6 @@
   Created by Ricardo Hurla on 04/07/2020.
   Copyright © 2020 Ricardo Hurla. All rights reserved.
 */
+
+// Repository Errors
+"repository_default_generic_error"="Check your internet connection and try again.";
