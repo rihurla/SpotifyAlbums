@@ -8,3 +8,4 @@
 
 // Repository Errors
 "repository_default_generic_error"="Check your internet connection and try again.";
+"repository_session_expired"="Session expired";

@@ -16,5 +16,6 @@ public enum ServiceUrls {
 
     enum Endpoints {
         static let token = "/api/token"
+        static let newReleases = "/browse/new-releases"
     }
 }

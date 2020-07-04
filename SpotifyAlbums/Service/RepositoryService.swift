@@ -12,6 +12,7 @@ public typealias RepositoryParameters = [String: String]
 
 public protocol RepositoryServiceType {
     func makeGetRequest<T: Decodable>(url: URL?,
+                                      header: RepositoryParameters?,
                                       success: @escaping (T) -> Void,
                                       failure: @escaping (Error?) -> Void)
     func makePostRequest<T: Decodable>(url: URL?,
@@ -23,19 +24,25 @@ public protocol RepositoryServiceType {
 
 public struct RepositoryService: RepositoryServiceType {
     public func makeGetRequest<T: Decodable>(url: URL?,
+                                             header: RepositoryParameters?,
                                              success: @escaping (T) -> Void,
                                              failure: @escaping (Error?) -> Void) {
         guard let requestUrl = url else {
             failure(RepositoryError.urlError)
             return
         }
-
-        URLSession.shared.dataTask(with: requestUrl) { (data, response, error) in
+        var request = URLRequest(url: requestUrl)
+        request.httpMethod = "GET"
+        if let headerParameters = header {
+            headerParameters.forEach {
+                request.setValue($0.value, forHTTPHeaderField: $0.key)
+            }
+        }
+        URLSession.shared.dataTask(with: request) { (data, response, error) in
             guard let requestData = data, error == nil else {
                 failure(error)
                 return
             }
-
             do {
                 let decodedObject = try JSONDecoder().decode(T.self, from: requestData)
                 success(decodedObject)

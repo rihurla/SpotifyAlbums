@@ -11,6 +11,7 @@ import Foundation
 public enum RepositoryError: Error {
     case urlError
     case requestFailure
+    case sessionExpired
 }
 
 extension RepositoryError: LocalizedError {
@@ -18,6 +19,8 @@ extension RepositoryError: LocalizedError {
         switch self {
         case .urlError, .requestFailure:
             return "repository_default_generic_error".localized
+        case .sessionExpired:
+            return "repository_session_expired".localized
         }
     }
 }

@@ -10,6 +10,7 @@ import UIKit
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     var window: UIWindow?
+    private let applicationTokenStorage = ApplicationTokenStorage()
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         guard let windowScene = (scene as? UIWindowScene) else { return }
@@ -17,19 +18,27 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         window?.rootViewController = UIViewController()
         window?.makeKeyAndVisible()
 
-        #warning("Token provider test - To be removed")
-        let tokenProvider = TokenDataProvider()
-        tokenProvider.authorizeApplication(success: { (token) in
-            print(token)
-        }, failure: { (error) in
-            print(error?.localizedDescription ?? "no error provided")
-        })
+        authorizeApplication()
     }
 
-    func sceneDidDisconnect(_ scene: UIScene) {}
+    func sceneDidDisconnect(_ scene: UIScene) {
+        applicationTokenStorage.delete()
+    }
+
     func sceneDidBecomeActive(_ scene: UIScene) {}
     func sceneWillResignActive(_ scene: UIScene) {}
     func sceneWillEnterForeground(_ scene: UIScene) {}
     func sceneDidEnterBackground(_ scene: UIScene) {}
+
+    // MARK: Private Methods
+    private func authorizeApplication() {
+        let tokenProvider = TokenDataProvider()
+        tokenProvider.authorizeApplication(success: { [weak self] (token) in
+            guard let self = self else { return }
+            self.applicationTokenStorage.store(token)
+        }, failure: { (error) in
+            print(error?.localizedDescription ?? "")
+        })
+    }
 }
 

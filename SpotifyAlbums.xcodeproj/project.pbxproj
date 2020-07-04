@@ -26,6 +26,17 @@
 		018717AF24B0ED1B009A5490 /* SpotifyRepositoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 018717AE24B0ED1B009A5490 /* SpotifyRepositoryTests.swift */; };
 		018717B424B0EDE8009A5490 /* RepositoryServiceMocked.swift in Sources */ = {isa = PBXBuildFile; fileRef = 018717B324B0EDE8009A5490 /* RepositoryServiceMocked.swift */; };
 		018717B624B0F1AE009A5490 /* AppCredentials.swift in Sources */ = {isa = PBXBuildFile; fileRef = 018717B524B0F1AE009A5490 /* AppCredentials.swift */; };
+		018717B824B0F3C2009A5490 /* SpotifyAlbums.swift in Sources */ = {isa = PBXBuildFile; fileRef = 018717B724B0F3C2009A5490 /* SpotifyAlbums.swift */; };
+		018717BA24B0F3D0009A5490 /* SpotifyAlbum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 018717B924B0F3D0009A5490 /* SpotifyAlbum.swift */; };
+		018717BE24B0FC43009A5490 /* SpotifyAlbumImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 018717BD24B0FC43009A5490 /* SpotifyAlbumImage.swift */; };
+		018717C024B0FF60009A5490 /* SpotifyAlbumExternalUrls.swift in Sources */ = {isa = PBXBuildFile; fileRef = 018717BF24B0FF60009A5490 /* SpotifyAlbumExternalUrls.swift */; };
+		018717C224B0FF6F009A5490 /* SpotifyAlbumArtist.swift in Sources */ = {isa = PBXBuildFile; fileRef = 018717C124B0FF6F009A5490 /* SpotifyAlbumArtist.swift */; };
+		018717C424B100F7009A5490 /* SpotifyAlbumsDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 018717C324B100F7009A5490 /* SpotifyAlbumsDataProvider.swift */; };
+		018717C624B101F5009A5490 /* SpotifyAlbumList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 018717C524B101F5009A5490 /* SpotifyAlbumList.swift */; };
+		018717C924B10683009A5490 /* ApplicationTokenStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 018717C824B10683009A5490 /* ApplicationTokenStorage.swift */; };
+		018717CB24B1155E009A5490 /* ApplicationTokenStorageMocked.swift in Sources */ = {isa = PBXBuildFile; fileRef = 018717CA24B1155E009A5490 /* ApplicationTokenStorageMocked.swift */; };
+		018717CD24B1157A009A5490 /* UserDefaultsMocked.swift in Sources */ = {isa = PBXBuildFile; fileRef = 018717CC24B1157A009A5490 /* UserDefaultsMocked.swift */; };
+		018717D024B1195A009A5490 /* ApplicationTokenStorageTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 018717CF24B1195A009A5490 /* ApplicationTokenStorageTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,6 +73,17 @@
 		018717AE24B0ED1B009A5490 /* SpotifyRepositoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpotifyRepositoryTests.swift; sourceTree = "<group>"; };
 		018717B324B0EDE8009A5490 /* RepositoryServiceMocked.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryServiceMocked.swift; sourceTree = "<group>"; };
 		018717B524B0F1AE009A5490 /* AppCredentials.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCredentials.swift; sourceTree = "<group>"; };
+		018717B724B0F3C2009A5490 /* SpotifyAlbums.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpotifyAlbums.swift; sourceTree = "<group>"; };
+		018717B924B0F3D0009A5490 /* SpotifyAlbum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpotifyAlbum.swift; sourceTree = "<group>"; };
+		018717BD24B0FC43009A5490 /* SpotifyAlbumImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpotifyAlbumImage.swift; sourceTree = "<group>"; };
+		018717BF24B0FF60009A5490 /* SpotifyAlbumExternalUrls.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpotifyAlbumExternalUrls.swift; sourceTree = "<group>"; };
+		018717C124B0FF6F009A5490 /* SpotifyAlbumArtist.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpotifyAlbumArtist.swift; sourceTree = "<group>"; };
+		018717C324B100F7009A5490 /* SpotifyAlbumsDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpotifyAlbumsDataProvider.swift; sourceTree = "<group>"; };
+		018717C524B101F5009A5490 /* SpotifyAlbumList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpotifyAlbumList.swift; sourceTree = "<group>"; };
+		018717C824B10683009A5490 /* ApplicationTokenStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationTokenStorage.swift; sourceTree = "<group>"; };
+		018717CA24B1155E009A5490 /* ApplicationTokenStorageMocked.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationTokenStorageMocked.swift; sourceTree = "<group>"; };
+		018717CC24B1157A009A5490 /* UserDefaultsMocked.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsMocked.swift; sourceTree = "<group>"; };
+		018717CF24B1195A009A5490 /* ApplicationTokenStorageTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationTokenStorageTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +125,7 @@
 		0187176524B0C1B5009A5490 /* SpotifyAlbums */ = {
 			isa = PBXGroup;
 			children = (
+				018717C724B1065C009A5490 /* Storage */,
 				018717A624B0DBB9009A5490 /* Provider */,
 				0187179B24B0CC97009A5490 /* Exptensions */,
 				0187178C24B0C3DF009A5490 /* Factory */,
@@ -124,6 +147,7 @@
 			isa = PBXGroup;
 			children = (
 				018717B024B0EDC5009A5490 /* Mocks */,
+				018717CE24B1193E009A5490 /* Storage */,
 				018717AD24B0ED0D009A5490 /* Service */,
 				0187177D24B0C1B6009A5490 /* SpotifyAlbumsTests.swift */,
 				0187177F24B0C1B6009A5490 /* Info.plist */,
@@ -161,6 +185,12 @@
 			isa = PBXGroup;
 			children = (
 				018717A024B0CDA6009A5490 /* SpotifyAuthorizationToken.swift */,
+				018717C524B101F5009A5490 /* SpotifyAlbumList.swift */,
+				018717B724B0F3C2009A5490 /* SpotifyAlbums.swift */,
+				018717B924B0F3D0009A5490 /* SpotifyAlbum.swift */,
+				018717C124B0FF6F009A5490 /* SpotifyAlbumArtist.swift */,
+				018717BD24B0FC43009A5490 /* SpotifyAlbumImage.swift */,
+				018717BF24B0FF60009A5490 /* SpotifyAlbumExternalUrls.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -187,6 +217,7 @@
 			isa = PBXGroup;
 			children = (
 				018717A724B0DBCA009A5490 /* TokenDataProvider.swift */,
+				018717C324B100F7009A5490 /* SpotifyAlbumsDataProvider.swift */,
 			);
 			path = Provider;
 			sourceTree = "<group>";
@@ -202,9 +233,27 @@
 		018717B024B0EDC5009A5490 /* Mocks */ = {
 			isa = PBXGroup;
 			children = (
+				018717CC24B1157A009A5490 /* UserDefaultsMocked.swift */,
+				018717CA24B1155E009A5490 /* ApplicationTokenStorageMocked.swift */,
 				018717B324B0EDE8009A5490 /* RepositoryServiceMocked.swift */,
 			);
 			path = Mocks;
+			sourceTree = "<group>";
+		};
+		018717C724B1065C009A5490 /* Storage */ = {
+			isa = PBXGroup;
+			children = (
+				018717C824B10683009A5490 /* ApplicationTokenStorage.swift */,
+			);
+			path = Storage;
+			sourceTree = "<group>";
+		};
+		018717CE24B1193E009A5490 /* Storage */ = {
+			isa = PBXGroup;
+			children = (
+				018717CF24B1195A009A5490 /* ApplicationTokenStorageTests.swift */,
+			);
+			path = Storage;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -312,13 +361,21 @@
 				018717A124B0CDA6009A5490 /* SpotifyAuthorizationToken.swift in Sources */,
 				018717AA24B0EBE3009A5490 /* DictionaryExtensions.swift in Sources */,
 				0187179624B0CC12009A5490 /* RepositoryService.swift in Sources */,
+				018717C624B101F5009A5490 /* SpotifyAlbumList.swift in Sources */,
 				0187176724B0C1B5009A5490 /* AppDelegate.swift in Sources */,
+				018717C024B0FF60009A5490 /* SpotifyAlbumExternalUrls.swift in Sources */,
 				018717A324B0CEEB009A5490 /* ServiceUrls.swift in Sources */,
 				018717B624B0F1AE009A5490 /* AppCredentials.swift in Sources */,
 				0187179D24B0CCC8009A5490 /* StringExtensions.swift in Sources */,
 				0187179A24B0CC3C009A5490 /* RepositoryError.swift in Sources */,
 				018717AC24B0EBF7009A5490 /* CharacterSetExtensions.swift in Sources */,
+				018717C224B0FF6F009A5490 /* SpotifyAlbumArtist.swift in Sources */,
+				018717B824B0F3C2009A5490 /* SpotifyAlbums.swift in Sources */,
+				018717BE24B0FC43009A5490 /* SpotifyAlbumImage.swift in Sources */,
 				0187179F24B0CD2D009A5490 /* SpotifyRepository.swift in Sources */,
+				018717BA24B0F3D0009A5490 /* SpotifyAlbum.swift in Sources */,
+				018717C924B10683009A5490 /* ApplicationTokenStorage.swift in Sources */,
+				018717C424B100F7009A5490 /* SpotifyAlbumsDataProvider.swift in Sources */,
 				018717A824B0DBCA009A5490 /* TokenDataProvider.swift in Sources */,
 				0187176924B0C1B5009A5490 /* SceneDelegate.swift in Sources */,
 			);
@@ -330,7 +387,10 @@
 			files = (
 				018717AF24B0ED1B009A5490 /* SpotifyRepositoryTests.swift in Sources */,
 				0187177E24B0C1B6009A5490 /* SpotifyAlbumsTests.swift in Sources */,
+				018717D024B1195A009A5490 /* ApplicationTokenStorageTests.swift in Sources */,
 				018717B424B0EDE8009A5490 /* RepositoryServiceMocked.swift in Sources */,
+				018717CB24B1155E009A5490 /* ApplicationTokenStorageMocked.swift in Sources */,
+				018717CD24B1157A009A5490 /* UserDefaultsMocked.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

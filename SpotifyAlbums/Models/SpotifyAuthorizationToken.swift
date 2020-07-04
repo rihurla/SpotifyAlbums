@@ -8,7 +8,7 @@
 
 import Foundation
 
-public struct SpotifyAuthorizationToken: Decodable, Equatable {
+public struct SpotifyAuthorizationToken: Codable, Equatable {
     let accessToken: String
     let tokenType: String
     let expiresIn: Double

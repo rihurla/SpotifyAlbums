@@ -17,7 +17,7 @@ public struct TokenDataProvider: TokenDataProviderType {
 
     // MARK: Private properties
     private let repository: SpotifyRepositoryType
-    private let queryParameters: RepositoryParameters = [
+    private let headerParameters: RepositoryParameters = [
         "Authorization": "Basic \(AppCredentials.encoded)",
         "Content-Type": "application/x-www-form-urlencoded"
     ]
@@ -32,7 +32,7 @@ public struct TokenDataProvider: TokenDataProviderType {
 
     public func authorizeApplication(success: @escaping (SpotifyAuthorizationToken) -> Void,
                                      failure: @escaping (Error?) -> Void) {
-        repository.authorizeApplication(header: queryParameters,
+        repository.authorizeApplication(header: headerParameters,
                                         body: bodyParameters,
                                         success: success,
                                         failure: failure)

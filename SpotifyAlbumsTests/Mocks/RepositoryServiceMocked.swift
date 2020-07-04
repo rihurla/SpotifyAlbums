@@ -19,7 +19,7 @@ public struct RepositoryServiceMocked: RepositoryServiceType {
         self.mockedError = mockedError
     }
 
-    public func makeGetRequest<T>(url: URL?, success: @escaping (T) -> Void, failure: @escaping (Error?) -> Void) where T : Decodable {
+    public func makeGetRequest<T>(url: URL?, header: RepositoryParameters?, success: @escaping (T) -> Void, failure: @escaping (Error?) -> Void) where T : Decodable {
         if let error = self.mockedError {
             failure(error)
         } else {
