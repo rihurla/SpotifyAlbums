@@ -9,3 +9,9 @@
 // Repository Errors
 "repository_default_generic_error"="Check your internet connection and try again.";
 "repository_session_expired"="Session expired";
+
+// Screens
+"sceen_title_new_releases"="New releases";
+"generic_error_title"="Error";
+"generic_error_message"="Oops! Something went wrong. :(";
+"generic_error_button_title"="Ok";

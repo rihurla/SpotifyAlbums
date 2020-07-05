@@ -15,11 +15,11 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         guard let windowScene = (scene as? UIWindowScene) else { return }
+        applicationTokenStorage.delete()
         window = UIWindow(windowScene: windowScene)
-        window?.rootViewController = UIViewController()
+        let newReleasesViewController = ViewControllerFactory.makeViewController(.newReleasesViewController)
+        window?.rootViewController = UINavigationController(rootViewController: newReleasesViewController)
         window?.makeKeyAndVisible()
-
-        authorizeApplication()
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {
@@ -30,15 +30,5 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     func sceneWillResignActive(_ scene: UIScene) {}
     func sceneWillEnterForeground(_ scene: UIScene) {}
     func sceneDidEnterBackground(_ scene: UIScene) {}
-
-    // MARK: Private Methods
-    private func authorizeApplication() {
-        tokenProvider.authorizeApplication(success: { [weak self] (token) in
-            guard let self = self else { return }
-            self.applicationTokenStorage.store(token)
-        }, failure: { (error) in
-            print(error?.localizedDescription ?? "")
-        })
-    }
 }
 

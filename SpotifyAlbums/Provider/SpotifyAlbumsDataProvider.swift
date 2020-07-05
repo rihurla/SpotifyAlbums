@@ -22,7 +22,7 @@ public struct SpotifyAlbumsDataProvider: SpotifyAlbumsDataProviderType {
     private let repository: SpotifyRepositoryType
     private let queryparameters: RepositoryParameters = [
         "country": "GB",
-        "limit": "1"
+        "limit": "20"
     ]
 
     // MARK: Public methods
