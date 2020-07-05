@@ -150,19 +150,100 @@ class SpotifyRepositoryTests: XCTestCase {
         XCTAssertEqual(testResult?.localizedDescription, expectedErrorDescription)
     }
 
+    func test_fetchAlbumDetails_withSuccess() {
+        // GIVEN
+        configureSut(mockedObject: Mocked.albumDetails)
+        var testResult: SpotifyAlbumDetails?
+
+        // WHEN
+        sut.fetchAlbumDetails(albumUrl: Mocked.albumUrl, success: { (albumDetails) in
+            testResult = albumDetails
+        }, failure: { (error) in
+            XCTFail("Should not call failure while testing success")
+        })
+
+        // THEN
+        XCTAssertNotNil(testResult)
+    }
+
+    func test_fetchAlbumDetails_responseObject() {
+        // GIVEN
+        let expectedDetails = Mocked.albumDetails
+        configureSut(mockedObject: Mocked.albumDetails)
+        var testResult: SpotifyAlbumDetails?
+
+        // WHEN
+        sut.fetchAlbumDetails(albumUrl: Mocked.albumUrl, success: { (albumDetails) in
+            testResult = albumDetails
+        }, failure: { (error) in
+            XCTFail("Should not call failure while testing success")
+        })
+
+        // THEN
+        XCTAssertEqual(testResult, expectedDetails)
+    }
+
+    func test_fetchAlbumDetails_withError() {
+        // GIVEN
+        configureSut(mockedObject: Mocked.albumDetails, error: Mocked.error)
+        var testResult: Error?
+
+        // WHEN
+        sut.fetchAlbumDetails(albumUrl: Mocked.albumUrl, success: { (albumDetails) in
+            XCTFail("Should not call success while testing error")
+        }, failure: { (error) in
+            testResult = error
+        })
+
+        // THEN
+        XCTAssertNotNil(testResult)
+    }
+
+    func test_fetchAlbumDetails_errorDescription() {
+        // GIVEN
+        let expectedErrorDescription = "Check your internet connection and try again."
+        configureSut(mockedObject: Mocked.newReleases, error: Mocked.error)
+        var testResult: Error?
+
+        // WHEN
+        sut.fetchAlbumDetails(albumUrl: Mocked.albumUrl, success: { (albumDetails) in
+            XCTFail("Should not call success while testing error")
+        }, failure: { (error) in
+            testResult = error
+        })
+
+
+        // THEN
+        XCTAssertEqual(testResult?.localizedDescription, expectedErrorDescription)
+    }
+
     // MARK: Private
     private enum Mocked {
         private static let artist = SpotifyAlbumArtist(name: "artist")
         private static let image = SpotifyAlbumImage(url: "image", height: 30, width: 30)
         private static let externalUrls = SpotifyAlbumExternalUrls(spotify: "spotify")
-        private static let album = SpotifyAlbum(name: "name", artists: [artist], images: [image], externalUrls: externalUrls)
+        private static let album = SpotifyAlbum(name: "name",
+                                                images: [image],
+                                                externalUrls: externalUrls,
+                                                albumDetailsUrl: "",
+                                                releaseDate: "",
+                                                releaseDatePrecision: .day)
         private static let albums = SpotifyAlbums(items: [album], next: nil)
 
+        static let albumUrl = "https://api.spotify.com/v1/albums/5glfCPECXSHzidU6exW8wO"
         static let error = RepositoryError.requestFailure
         static let token = SpotifyAuthorizationToken(accessToken: "token",
                                                      tokenType: "type",
                                                      expiresIn: 1234)
         static let newReleases = SpotifyAlbumList(albums: albums)
+        static let albumDetails = SpotifyAlbumDetails(type: .album,
+                                                      name: "name",
+                                                      artists: [artist],
+                                                      images: [image],
+                                                      externalUrls: externalUrls,
+                                                      albumDetailsUrl: "",
+                                                      releaseDate: "",
+                                                      releaseDatePrecision: .day)
     }
 
     private func configureSut(mockedObject: Decodable, error: Error? = nil) {

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		014FD45524B1DB6400EF20BF /* SpotifyAlbumDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 014FD45424B1DB6400EF20BF /* SpotifyAlbumDetails.swift */; };
 		0187176724B0C1B5009A5490 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0187176624B0C1B5009A5490 /* AppDelegate.swift */; };
 		0187176924B0C1B5009A5490 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0187176824B0C1B5009A5490 /* SceneDelegate.swift */; };
 		0187177024B0C1B6009A5490 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0187176F24B0C1B6009A5490 /* Assets.xcassets */; };
@@ -50,6 +51,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		014FD45424B1DB6400EF20BF /* SpotifyAlbumDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpotifyAlbumDetails.swift; sourceTree = "<group>"; };
 		0187176324B0C1B5009A5490 /* SpotifyAlbums.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SpotifyAlbums.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0187176624B0C1B5009A5490 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0187176824B0C1B5009A5490 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -188,6 +190,7 @@
 				018717C524B101F5009A5490 /* SpotifyAlbumList.swift */,
 				018717B724B0F3C2009A5490 /* SpotifyAlbums.swift */,
 				018717B924B0F3D0009A5490 /* SpotifyAlbum.swift */,
+				014FD45424B1DB6400EF20BF /* SpotifyAlbumDetails.swift */,
 				018717C124B0FF6F009A5490 /* SpotifyAlbumArtist.swift */,
 				018717BD24B0FC43009A5490 /* SpotifyAlbumImage.swift */,
 				018717BF24B0FF60009A5490 /* SpotifyAlbumExternalUrls.swift */,
@@ -368,6 +371,7 @@
 				018717B624B0F1AE009A5490 /* AppCredentials.swift in Sources */,
 				0187179D24B0CCC8009A5490 /* StringExtensions.swift in Sources */,
 				0187179A24B0CC3C009A5490 /* RepositoryError.swift in Sources */,
+				014FD45524B1DB6400EF20BF /* SpotifyAlbumDetails.swift in Sources */,
 				018717AC24B0EBF7009A5490 /* CharacterSetExtensions.swift in Sources */,
 				018717C224B0FF6F009A5490 /* SpotifyAlbumArtist.swift in Sources */,
 				018717B824B0F3C2009A5490 /* SpotifyAlbums.swift in Sources */,

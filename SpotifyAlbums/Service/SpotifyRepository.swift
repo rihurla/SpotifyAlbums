@@ -16,6 +16,9 @@ public protocol SpotifyRepositoryType {
     func fetchNewReleasesList(parameters: RepositoryParameters?,
                               success: @escaping (SpotifyAlbumList) -> Void,
                               failure: @escaping (Error?) -> Void)
+    func fetchAlbumDetails(albumUrl: String,
+                           success: @escaping (SpotifyAlbumDetails) -> Void,
+                           failure: @escaping (Error?) -> Void)
 }
 
 public struct SpotifyRepository: SpotifyRepositoryType {
@@ -63,6 +66,24 @@ public struct SpotifyRepository: SpotifyRepositoryType {
         if let queryParameters = parameters { components.setQueryItems(with: queryParameters) }
         service.makeGetRequest(url: components.url, header: headerParameters, success: { (newReleases: SpotifyAlbumList) in
             success(newReleases)
+        }, failure: { (error) in
+            failure(error)
+        })
+    }
+
+    public func fetchAlbumDetails(albumUrl: String,
+                                  success: @escaping (SpotifyAlbumDetails) -> Void,
+                                  failure: @escaping (Error?) -> Void) {
+        guard let url = URL(string: albumUrl), let token = tokenStorage.retrieve() else {
+            failure(RepositoryError.sessionExpired)
+            return
+        }
+        let headerParameters: RepositoryParameters = [
+            "Authorization": "\(token.tokenType) \(token.accessToken)",
+            "Content-Type": "application/x-www-form-urlencoded"
+        ]
+        service.makeGetRequest(url: url, header: headerParameters, success: { (albumDetails: SpotifyAlbumDetails) in
+            success(albumDetails)
         }, failure: { (error) in
             failure(error)
         })

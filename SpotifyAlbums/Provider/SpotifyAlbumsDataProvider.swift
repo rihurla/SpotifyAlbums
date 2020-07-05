@@ -11,6 +11,9 @@ import Foundation
 protocol SpotifyAlbumsDataProviderType {
     func fetchNewReleasesList(success: @escaping (SpotifyAlbumList) -> Void,
                               failure: @escaping (Error?) -> Void)
+    func fetchAlbumDetails(albumUrl: String,
+                           success: @escaping (SpotifyAlbumDetails) -> Void,
+                           failure: @escaping (Error?) -> Void)
 }
 
 public struct SpotifyAlbumsDataProvider: SpotifyAlbumsDataProviderType {
@@ -32,5 +35,13 @@ public struct SpotifyAlbumsDataProvider: SpotifyAlbumsDataProviderType {
         self.repository.fetchNewReleasesList(parameters: queryparameters,
                                              success: success,
                                              failure: failure)
+    }
+
+    func fetchAlbumDetails(albumUrl: String,
+                           success: @escaping (SpotifyAlbumDetails) -> Void,
+                           failure: @escaping (Error?) -> Void) {
+        self.repository.fetchAlbumDetails(albumUrl: albumUrl,
+                                          success: success,
+                                          failure: failure)
     }
 }
