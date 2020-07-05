@@ -15,3 +15,11 @@
 "generic_error_title"="Error";
 "generic_error_message"="Oops! Something went wrong. :(";
 "generic_error_button_title"="Ok";
+
+// Cells
+"album_cell_release_date_prefix"="Release date:";
+"album_cell_release_date_unknown"="not available";
+
+// Objects
+"object_details_popularity_prefix"="Popularity:";
+"object_details_popularity_suffix"="out of 100";

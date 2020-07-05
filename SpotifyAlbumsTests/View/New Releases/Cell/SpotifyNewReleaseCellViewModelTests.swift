@@ -26,7 +26,7 @@ class SpotifyNewReleaseCellViewModelTests: XCTestCase {
         // THEN
         XCTAssertEqual(sut.albumName, "name")
         XCTAssertEqual(sut.albumImageUrl, "image")
-        XCTAssertEqual(sut.albumReleaseDate, "Dec 15, 1981")
+        XCTAssertEqual(sut.albumReleaseDate, "Release date: 15.12.1981")
         XCTAssertEqual(sut.shareUrl, "https://api.spotify.com/v1/albums/5glfCPECXSHzidU6exW8wO")
     }
 

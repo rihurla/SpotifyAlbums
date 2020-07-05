@@ -18,7 +18,6 @@ struct SpotifyAlbumReleaseDateTransformer {
     private static var printDateFormatter: DateFormatter = {
         let formatter = DateFormatter()
         formatter.locale = Locale.current
-        formatter.dateStyle = .medium
         return formatter
     }()
 
@@ -36,6 +35,14 @@ struct SpotifyAlbumReleaseDateTransformer {
     }
 
     static func releaseStringDateFrom(_ releaseDate: String, precision: SpotifyAlbumReleaseDatePrecision) -> String? {
+        switch precision {
+        case .year:
+            printDateFormatter.dateFormat = "yyyy"
+        case .month:
+            printDateFormatter.dateFormat = "MM.yyyy"
+        case .day:
+            printDateFormatter.dateFormat = "dd.MM.yyyy"
+        }
         guard let date = releaseDateFrom(releaseDate, precision: precision) else { return nil }
         return printDateFormatter.string(from: date)
     }

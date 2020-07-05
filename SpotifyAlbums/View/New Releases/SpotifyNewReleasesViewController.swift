@@ -33,6 +33,13 @@ final class SpotifyNewReleasesViewController: UIViewController {
         startNewReleasesFetch()
     }
 
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        if let selectionIndexPath = self.tableView.indexPathForSelectedRow {
+            self.tableView.deselectRow(at: selectionIndexPath, animated: animated)
+        }
+    }
+
     private func configureView() {
         title = viewModel.screenTitle
         view.backgroundColor = DesignResources.ColorPallete.background
@@ -115,4 +122,13 @@ extension SpotifyNewReleasesViewController: UITableViewDataSource {
 }
 
 extension SpotifyNewReleasesViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let album = viewModel.albumFor(indexPath)
+        let albumName = album.name
+        let albumUrl = album.albumDetailsUrl
+        let viewControllerType = ViewControllerFactoryType.albumDetailsViewController(albumName: albumName,
+                                                                                      albumUrl: albumUrl)
+        let viewController = ViewControllerFactory.makeViewController(viewControllerType)
+        navigationController?.pushViewController(viewController, animated: true)
+    }
 }

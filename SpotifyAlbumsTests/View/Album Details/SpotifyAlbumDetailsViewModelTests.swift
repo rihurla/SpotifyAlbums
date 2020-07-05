@@ -1,5 +1,5 @@
 //
-//  SpotifyNewReleasesViewModelTests.swift
+//  SpotifyAlbumDetailsViewModelTests.swift
 //  SpotifyAlbumsTests
 //
 //  Created by Ricardo Hurla on 05/07/2020.
@@ -9,15 +9,15 @@
 import XCTest
 @testable import SpotifyAlbums
 
-class SpotifyNewReleasesViewModelTests: XCTestCase {
-    var sut: SpotifyNewReleasesViewModel!
+class SpotifyAlbumDetailsViewModelTests: XCTestCase {
+    var sut: SpotifyAlbumDetailsViewModel!
 
     override func tearDown() {
         sut = nil
         super.tearDown()
     }
 
-    func test_fetchNewReleasesList_successfully() {
+    func test_fetchAlbumDetails_withSuccess() {
         // GIVEN
         var testResult: Bool = false
         var testError: Error? = nil
@@ -35,7 +35,7 @@ class SpotifyNewReleasesViewModelTests: XCTestCase {
         XCTAssertNil(testError)
     }
 
-    func test_fetchNewReleasesList_withFailure() {
+    func test_fetchAlbumDetails_withError() {
         // GIVEN
         var testResult: Bool = true
         var testError: Error? = nil
@@ -54,11 +54,11 @@ class SpotifyNewReleasesViewModelTests: XCTestCase {
         XCTAssertEqual(testError?.localizedDescription, "Check your internet connection and try again.")
     }
 
-    func test_newReleases_count() {
+    func test_fetchAlbumDetails_object() {
         // GIVEN
-        var testResult: Int = 0
+        var testResult: SpotifyAlbumDetails? = nil
         let handler: (_ success: Bool, _ error: Error?) -> Void = { success, _  in
-            testResult = self.sut.albumCount()
+            testResult = self.sut.albumDetails()
         }
         configureSut(fetchHandler: handler)
 
@@ -66,22 +66,7 @@ class SpotifyNewReleasesViewModelTests: XCTestCase {
         sut.fetch()
 
         // THEN
-        XCTAssertEqual(testResult, 1)
-    }
-
-    func test_newReleases_albumForIndexPath() {
-        // GIVEN
-        var testResult: SpotifyAlbum? = nil
-        let handler: (_ success: Bool, _ error: Error?) -> Void = { success, _  in
-            testResult = self.sut.albumFor(IndexPath(item: 0, section: 0))
-        }
-        configureSut(fetchHandler: handler)
-
-        // WHEN
-        sut.fetch()
-
-        // THEN
-        XCTAssertEqual(testResult, Mocked.album)
+        XCTAssertEqual(testResult, Mocked.albumDetails)
     }
 
     private enum Mocked {
@@ -92,8 +77,8 @@ class SpotifyNewReleasesViewModelTests: XCTestCase {
         static let album = SpotifyAlbum(name: "name",
                                         images: [image],
                                         externalUrls: externalUrls,
-                                        albumDetailsUrl: "",
-                                        releaseDate: "",
+                                        albumDetailsUrl: albumUrl,
+                                        releaseDate: "1981-12-15",
                                         releaseDatePrecision: .day)
         static let albumUrl = "https://api.spotify.com/v1/albums/5glfCPECXSHzidU6exW8wO"
         static let error = RepositoryError.requestFailure
@@ -106,20 +91,18 @@ class SpotifyNewReleasesViewModelTests: XCTestCase {
                                                       artists: [artist],
                                                       images: [image],
                                                       externalUrls: externalUrls,
-                                                      albumDetailsUrl: "",
-                                                      releaseDate: "",
+                                                      albumDetailsUrl: albumUrl,
+                                                      releaseDate: "1981-12-15",
                                                       releaseDatePrecision: .day)
     }
 
-    private func configureSut(fetchHandler: ((_ success: Bool, _ error: Error?) -> Void)?, error: Error? = nil) {
-        let applicationTokenStorageMocked = ApplicationTokenStorageMocked(storedToken: Mocked.token)
-        let tokenProviderMocked = TokenDataProviderMocked(token: Mocked.token, error: error)
+    private func configureSut(fetchHandler: ((_ success: Bool, _ error: Error?) -> Void)?,
+                              error: Error? = nil) {
         let albumProviderMocked = SpotifyAlbumsDataProviderMocked(albumList: Mocked.newReleases,
                                                                   albumDetails: Mocked.albumDetails,
                                                                   error: error)
-        sut = SpotifyNewReleasesViewModel(applicationTokenStorage: applicationTokenStorageMocked,
-                                          tokenProvider: tokenProviderMocked,
-                                          albumProvider: albumProviderMocked)
+        sut = SpotifyAlbumDetailsViewModel(albumDetailsUrl: Mocked.album.albumDetailsUrl,
+                                           albumProvider: albumProviderMocked)
         sut.fetchHander = fetchHandler
     }
 

@@ -23,6 +23,8 @@ public struct SpotifyAlbumDetails: Decodable, Equatable {
     let albumDetailsUrl: String
     let releaseDate: String
     let releaseDatePrecision: SpotifyAlbumReleaseDatePrecision
+    let genres: [String]
+    let popularity: Int
 
     enum CodingKeys: String, CodingKey {
         case type = "album_type"
@@ -33,5 +35,7 @@ public struct SpotifyAlbumDetails: Decodable, Equatable {
         case albumDetailsUrl = "href"
         case releaseDate = "release_date"
         case releaseDatePrecision = "release_date_precision"
+        case genres
+        case popularity
     }
 }

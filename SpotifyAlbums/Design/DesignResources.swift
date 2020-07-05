@@ -32,5 +32,6 @@ public enum DesignResources {
     enum ImageCollection {
         static let shareIcon = UIImage(named: "share-icon")?.withRenderingMode(.alwaysTemplate)
         static let imagePlaceholderSmall = UIImage(named: "image-placeholder-small")
+        static let imagePlaceholderLarge = UIImage(named: "image-placeholder-large")
     }
 }

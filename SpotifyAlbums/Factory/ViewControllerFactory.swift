@@ -10,6 +10,7 @@ import UIKit
 
 public enum ViewControllerFactoryType {
     case newReleasesViewController
+    case albumDetailsViewController(albumName: String, albumUrl: String)
 }
 
 public enum ViewControllerFactory {
@@ -18,6 +19,9 @@ public enum ViewControllerFactory {
         case .newReleasesViewController:
             let viewModel = SpotifyNewReleasesViewModel()
             return SpotifyNewReleasesViewController(viewModel: viewModel)
+        case .albumDetailsViewController(let albumName, let albumUrl):
+            let viewModel = SpotifyAlbumDetailsViewModel(albumName: albumName, albumDetailsUrl: albumUrl)
+            return SpotifyAlbumDetailsViewController(viewModel: viewModel)
         }
     }
 }

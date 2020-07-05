@@ -29,9 +29,11 @@ final class SpotifyNewReleaseCellViewModel: SpotifyNewReleaseCellViewModelType {
     init(album: SpotifyAlbum) {
         self.album = album
         self.albumName = album.name
-        self.albumImageUrl = album.images.first?.url
-        self.albumReleaseDate = SpotifyAlbumReleaseDateTransformer.releaseStringDateFrom(album.releaseDate,
-                                                                                         precision: album.releaseDatePrecision)
+        self.albumImageUrl = album.images.last?.url
+        let releaseDate = SpotifyAlbumReleaseDateTransformer.releaseStringDateFrom(album.releaseDate,
+                                                                                   precision: album.releaseDatePrecision) ?? "album_cell_release_date_unknown".localized
+
+        self.albumReleaseDate = "album_cell_release_date_prefix".localized + " " + releaseDate
         self.shareUrl = album.externalUrls.spotify
     }
 
