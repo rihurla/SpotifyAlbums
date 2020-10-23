@@ -243,7 +243,9 @@ class SpotifyRepositoryTests: XCTestCase {
                                                       externalUrls: externalUrls,
                                                       albumDetailsUrl: "",
                                                       releaseDate: "",
-                                                      releaseDatePrecision: .day)
+                                                      releaseDatePrecision: .day,
+                                                      genres: ["Rock"],
+                                                      popularity: 1)
     }
 
     private func configureSut(mockedObject: Decodable, error: Error? = nil) {

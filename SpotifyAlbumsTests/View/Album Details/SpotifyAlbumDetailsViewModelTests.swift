@@ -91,9 +91,11 @@ class SpotifyAlbumDetailsViewModelTests: XCTestCase {
                                                       artists: [artist],
                                                       images: [image],
                                                       externalUrls: externalUrls,
-                                                      albumDetailsUrl: albumUrl,
-                                                      releaseDate: "1981-12-15",
-                                                      releaseDatePrecision: .day)
+                                                      albumDetailsUrl: "",
+                                                      releaseDate: "",
+                                                      releaseDatePrecision: .day,
+                                                      genres: ["Rock"],
+                                                      popularity: 1)
     }
 
     private func configureSut(fetchHandler: ((_ success: Bool, _ error: Error?) -> Void)?,
@@ -101,7 +103,8 @@ class SpotifyAlbumDetailsViewModelTests: XCTestCase {
         let albumProviderMocked = SpotifyAlbumsDataProviderMocked(albumList: Mocked.newReleases,
                                                                   albumDetails: Mocked.albumDetails,
                                                                   error: error)
-        sut = SpotifyAlbumDetailsViewModel(albumDetailsUrl: Mocked.album.albumDetailsUrl,
+        sut = SpotifyAlbumDetailsViewModel(albumName: "name",
+                                           albumDetailsUrl: Mocked.album.albumDetailsUrl,
                                            albumProvider: albumProviderMocked)
         sut.fetchHander = fetchHandler
     }

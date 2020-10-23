@@ -108,7 +108,9 @@ class SpotifyNewReleasesViewModelTests: XCTestCase {
                                                       externalUrls: externalUrls,
                                                       albumDetailsUrl: "",
                                                       releaseDate: "",
-                                                      releaseDatePrecision: .day)
+                                                      releaseDatePrecision: .day,
+                                                      genres: ["Rock"],
+                                                      popularity: 1)
     }
 
     private func configureSut(fetchHandler: ((_ success: Bool, _ error: Error?) -> Void)?, error: Error? = nil) {
