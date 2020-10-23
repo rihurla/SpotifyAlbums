@@ -1,6 +1,4 @@
 # SpotifyAlbums
-
-# SpotifyAlbums
 App created to display Spotify album releases. :)
 
 ### Running Tests
